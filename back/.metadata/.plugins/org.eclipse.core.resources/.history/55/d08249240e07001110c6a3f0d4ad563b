@@ -1,0 +1,31 @@
+package com.example.demo.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity
+@Table(name = "tbl_todo")
+@Getter
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Todo {
+
+	private Long tno;
+	
+	
+	private String title;
+	
+	
+	private String writer;
+	
+	private boolean complete;
+	
+	
+}
