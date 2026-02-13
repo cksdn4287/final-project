@@ -1,0 +1,30 @@
+package com.example.demo.service;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.dto.TodoDTO;
+
+import lombok.extern.log4j.Log4j;
+
+@SpringBootTest
+@Log4j
+public class TodoServiceTest {
+
+	
+	@Autowired
+	private TodoService todoService;
+	
+	@Test
+	public void testRegister() {
+		
+		TodoDTO todoDTO = TodoDTO.builder()
+				.title("서비스 테스트")
+				.writer("테스터")
+				.dueDate(LocalDate.of(2026, 04, 20))
+				.build();
+	}
+}
