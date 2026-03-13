@@ -21,3 +21,24 @@ export const getList = async (pageParam) => {
   return res.data
 }
 
+export const postAdd = async(todoObj) => {
+
+  const res = await axios.post(`${preifx}/`, todoObj)
+
+return res.data
+}
+
+export const deleteOne = async (tno) => {
+
+  const res = await axios.delete(`${preifx}/${tno}`)
+
+  return res.data
+}
+
+export const putOne = async (todo) => {
+
+  const res = await axios.put(`${preifx}/${todo.tno}` , todo)
+
+  return res.data
+}
+

@@ -4,30 +4,7 @@ import ReadComponent from "../../components/todo/ReadComponent";
 
 const ReadPage = () => {
 
-  const {tno} = useParams()  //  {  tno : "100"}
-
-  const navigate = useNavigate()
-
-  const [queryParams] = useSearchParams()
-
-  const page = queryParams.get("page")  ? parseInt(queryParams.get("page")) : 1
-  const size = queryParams.get("size") ? parseInt(queryParams.get("size")) : 10
-
-  const queryStr = createSearchParams({page,size}).toString()
-
-  const moveToModify = useCallback((tno) => {
-    navigate(    {  
-      pathname:`/todo/modify/${tno}` ,
-      search:queryStr
-    }          )
-  } , [tno , page, size , queryStr , navigate])
-
-  const moveToList = useCallback(  () => {
-    navigate( {
-      pathname : `/todo/list` ,
-      search:queryStr
-    })
-  },[page, size , queryStr, navigate])
+  const {tno} = useParams()  //  {  tno : "100"rjs
 
   return(
     <div className="font-extrabold w-full bg-white mt-6">
